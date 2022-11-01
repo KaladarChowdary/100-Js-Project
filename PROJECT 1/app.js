@@ -1,26 +1,13 @@
-const closedFace = document.querySelector(".closed");
-const openFace = document.querySelector(".open");
+const emoji = document.querySelectorAll(".emoji");
+console.log(emoji);
 
-function makeActive(element) {
-  element.classList.add("active");
+function reverseClass() {
+  emoji.forEach((node) => {
+    if (node.classList.contains("active")) node.classList.remove("active");
+    else node.classList.add("active");
+  });
 }
 
-function removeActive(element) {
-  element.classList.remove("active");
-}
-
-function isActive(element) {
-  return element.classList.contains("active");
-}
-
-makeActive(closedFace);
-
-closedFace.addEventListener("click", () => {
-  removeActive(closedFace);
-  makeActive(openFace);
-});
-
-openFace.addEventListener("click", () => {
-  removeActive(openFace);
-  makeActive(closedFace);
+emoji.forEach((node) => {
+  node.onclick = reverseClass;
 });

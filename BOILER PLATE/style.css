@@ -16,13 +16,6 @@ body {
   font-size: 10rem;
   cursor: pointer;
   user-select: none;
-}
-
-.closed {
-  display: none;
-}
-
-.open {
   display: none;
 }
 

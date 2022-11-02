@@ -9,6 +9,8 @@ let data = [
 
 const info = document.querySelector("#info");
 
-let details = data.map((item) => `<div> ${item.name} is ${item.age} years old`);
+let details = data.map(
+  (item) => `<div> ${item.name} is ${item.age} years old </div>`
+);
 
 info.innerHTML = details.join("\n");

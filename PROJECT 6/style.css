@@ -25,6 +25,11 @@ body {
   box-shadow: 4px 4px 30px rgb(0, 0, 0, 0.06);
 
   padding: 20px;
+  overflow-y: scroll;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
 }
 
 .container form {
@@ -51,4 +56,35 @@ body {
 
 .container form i {
   padding: 5px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 15px;
+}
+
+.product-list {
+  padding: 20px 0;
+}
+
+.product .p-details {
+  padding-left: 15px;
+}
+
+.product img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product .p-details h2 {
+  font-size: 20px;
+  color: #1d1d1d;
+}
+
+.product .p-details h3 {
+  font-size: 17px;
 }

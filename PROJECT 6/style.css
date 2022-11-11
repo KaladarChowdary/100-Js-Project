@@ -19,7 +19,7 @@ body {
 }
 
 .container {
-  width: 375px;
+  width: 400px;
   height: 500px;
   background-color: #fff;
   box-shadow: 4px 4px 30px rgb(0, 0, 0, 0.06);
@@ -81,7 +81,7 @@ body {
 }
 
 .product .p-details h2 {
-  font-size: 20px;
+  font-size: 15px;
   color: #1d1d1d;
 }
 

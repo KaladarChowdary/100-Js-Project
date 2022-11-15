@@ -70,3 +70,18 @@ form input.button {
   font-weight: 500;
   cursor: pointer;
 }
+
+h5 {
+  font-size: 1.2rem;
+  background-color: #ffd4cd;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.feedback {
+  display: none;
+}
+
+.message-content {
+  color: #4b830f;
+}

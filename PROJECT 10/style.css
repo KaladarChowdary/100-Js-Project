@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  background-color: #fab22e;
+}
+
+.wrapper {
+  width: 80vmin;
+  padding: 50px 40px;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+span {
+  display: block;
+  text-align: center;
+  font-size: 100px;
+}
+
+p {
+  font-size: 16px;
+  color: white;
+}

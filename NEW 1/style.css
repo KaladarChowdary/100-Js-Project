@@ -5,5 +5,5 @@
   position: absolute;
   background-color: red;
 
-  transition: all 1s;
+  transition: all linear 1s;
 }

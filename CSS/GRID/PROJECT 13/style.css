@@ -19,28 +19,10 @@ body {
 }
 
 .item {
-  background-color: steelblue;
+  background-color: black;
   border: 1px solid lightblue;
   font-size: 15px;
+  font-weight: 600;
+  color: #fff;
   padding: 15px;
-}
-
-#c1 {
-  display: grid;
-  row-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-#c2 {
-  display: grid;
-  row-gap: 10px;
-
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.c3 {
-  display: grid;
-
-  grid-template-rows: 1fr 2fr;
-  row-gap: 10px;
 }

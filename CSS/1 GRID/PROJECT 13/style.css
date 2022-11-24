@@ -13,6 +13,7 @@ body {
 }
 
 .container {
+  max-width: 800px;
   border: 1px solid black;
   margin: 50px auto;
   padding: 10px;
@@ -25,4 +26,34 @@ body {
   font-weight: 600;
   color: #fff;
   padding: 15px;
+}
+
+#c1 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#c2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#c3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#c4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#c5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#c6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }

@@ -1,47 +1,19 @@
-const userLeft = false;
-const userWatchingCatMeme = false;
+const recordVideo1 = new Promise((resolve, reject) => {
+  resolve("video 1 recorded");
+});
 
-// function watchTutorialCallback(callback, errorCallback) {
-//   if (userLeft) {
-//     errorCallback({ name: "userleft", message: ":(" });
-//   } else if (userWatchingCatMeme) {
-//     errorCallback({
-//       name: "User Watching Cat Meme",
-//       message: "webDevSimplified < Cat",
-//     });
-//   } else {
-//     callback("ThumbsUP and subscribe");
-//   }
-// }
+const recordVideo2 = new Promise((resolve, reject) => {
+  resolve("video 2 recorded");
+});
 
-// watchTutorialCallback(
-//   (message) => {
-//     console.log(`Success : ${message}`);
-//   },
-//   (error) => {
-//     console.log(`${error.name} : ${error.message}`);
-//   }
-// );
+const recordVideo3 = new Promise((resolve, reject) => {
+  resolve("video 3 recorded");
+});
 
-function watchTutorialPromise() {
-  return new Promise((resolve, reject) => {
-    if (userLeft) {
-      reject({ name: "userleft", message: ":(" });
-    } else if (userWatchingCatMeme) {
-      reject({
-        name: "User Watching Cat Meme",
-        message: "webDevSimplified < Cat",
-      });
-    } else {
-      resolve("ThumbsUP and subscribe");
-    }
-  });
-}
+// Promise.all([recordVideo1, recordVideo2, recordVideo3]).then((message) => {
+//   for (let i of message) console.log(i);
+// });
 
-watchTutorialPromise()
-  .then((message) => {
-    console.log(`Success - ${message}`);
-  })
-  .catch((error) => {
-    console.log(`${error.name} - ${error.message}`);
-  });
+Promise.race([recordVideo1, recordVideo2, recordVideo3]).then((message) => {
+  console.log(message);
+});

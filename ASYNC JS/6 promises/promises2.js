@@ -1,24 +1,24 @@
-function promise1() {
-  return new Promise((resolve, reject) => {
-    const msg = "Promise1 Object";
-    resolve(msg);
-  });
-}
-
-function promise2() {
-  return new Promise((resolve, reject) => {
-    const msg = "Promise2 Object";
-    resolve(msg);
-  });
-}
-
-function promise3() {
-  return new Promise((resolve, reject) => {
-    const msg = "Object3";
-    resolve(msg);
-  });
-}
-
-Promise.all([promise1, promise2, promise3]).then((msg) => {
-  console.log(msg);
+const promise1 = new Promise((resolve, reject) => {
+  const msg = "Object1";
+  resolve(msg);
 });
+
+const promise2 = new Promise((resolve, reject) => {
+  const msg = "Object2";
+  resolve(msg);
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  const msg = "Object3";
+  resolve(msg);
+});
+
+// promise1 = Promise.resolve("obj1");
+// promise2 = Promise.resolve("obj2");
+// promise3 = Promise.resolve("obj3");
+
+function success(msg) {
+  console.log(msg);
+}
+
+Promise.all([promise1, promise2, promise3]).then(success);

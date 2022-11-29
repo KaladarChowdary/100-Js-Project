@@ -1,5 +1,5 @@
 const posts = [
-  { title: "Post 1", body: "This is postm1" },
+  { title: "Post 1", body: "This is post 1" },
   { title: "Post 2", body: "This is post 2" },
 ];
 
@@ -12,7 +12,13 @@ function getPost() {
     });
 
     document.body.innerHTML = output;
+  }, 1000);
+}
+
+function createPost(post, callback) {
+  setTimeout(() => {
+    if (posts.push(post)) callback();
   }, 2000);
 }
 
-getPost();
+createPost({ title: "Post 3", body: "This is post3" }, getPost);

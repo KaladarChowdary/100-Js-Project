@@ -23,16 +23,28 @@ function createPost(post) {
       const error = true;
 
       if (!error) {
+        console.log(`   It is successful calling success function`);
         resolve();
+        console.log(`   End of success function`);
       } else {
-        reject("Element couldn't be pushed");
+        console.log(`   It is failure calling failure function`);
+        reject(`Operation is failed`);
+        console.log(`   End of failure function`);
       }
     }, 2000);
   });
 }
 
-createPost({ title: "Post 3", body: "This is post3" })
-  .then(getPost)
-  .catch((error) => {
-    console.log(`Error: ${error}`);
-  });
+// createPost({ title: "Post 3", body: "This is post3" })
+//   .then(getPost)
+//   .catch((error) => {
+//     console.log(`Error: ${error}`);
+//   });
+
+async function init() {
+  await createPost({ title: "Post 3", body: "This is post3" });
+
+  getPost();
+}
+
+init();

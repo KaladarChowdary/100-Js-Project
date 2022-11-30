@@ -23,28 +23,25 @@ function createPost(post) {
       const error = true;
 
       if (!error) {
-        console.log(`   It is successful calling success function`);
         resolve();
-        console.log(`   End of success function`);
       } else {
-        console.log(`   It is failure calling failure function`);
         reject(`Operation is failed`);
-        console.log(`   End of failure function`);
       }
     }, 2000);
   });
 }
 
-// createPost({ title: "Post 3", body: "This is post3" })
-//   .then(getPost)
-//   .catch((error) => {
-//     console.log(`Error: ${error}`);
-//   });
+async function asyncCode() {
+  try {
+    await createPost({
+      title: "Post 3",
+      body: "This is post3",
+    });
 
-async function init() {
-  await createPost({ title: "Post 3", body: "This is post3" });
-
-  getPost();
+    getPost();
+  } catch (e) {
+    console.log(`Error: ${e}`);
+  }
 }
 
-init();
+asyncCode();

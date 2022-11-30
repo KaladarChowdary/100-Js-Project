@@ -1,24 +1,28 @@
 const promise1 = new Promise((resolve, reject) => {
-  const msg = "Object1";
+  const msg = "SuccessObject1";
   resolve(msg);
 });
 
 const promise2 = new Promise((resolve, reject) => {
-  const msg = "Object2";
+  const msg = "SuccessObject2";
   resolve(msg);
 });
 
 const promise3 = new Promise((resolve, reject) => {
-  const msg = "Object3";
+  const msg = "SuccessObject3";
   resolve(msg);
 });
-
-// promise1 = Promise.resolve("obj1");
-// promise2 = Promise.resolve("obj2");
-// promise3 = Promise.resolve("obj3");
 
 function success(msg) {
   console.log(msg);
 }
 
-Promise.all([promise1, promise2, promise3]).then(success);
+// Promise.all([promise1, promise2, promise3]).then(success);
+
+async function asyncCode() {
+  const resovleParameter = await Promise.all([promise1, promise2, promise3]);
+
+  success(resovleParameter);
+}
+
+asyncCode();

@@ -6,12 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="app.js" type="module"></script>
   </head>
   <body>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCl20CukwbVzlY4ILxXheyetA-AaX6YqSs",
+        authDomain: "project-1-b5bfb.firebaseapp.com",
+        databaseURL: "https://project-1-b5bfb-default-rtdb.firebaseio.com",
+        projectId: "project-1-b5bfb",
+        storageBucket: "project-1-b5bfb.appspot.com",
+        messagingSenderId: "237712989021",
+        appId: "1:237712989021:web:1114f0f040e42598b6a6b4",
+        measurementId: "G-R4DWGRDEP9",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      import {
+        getDatabase,
+        get,
+        ref,
+        set,
+        child,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+
+      const db = getDatabase();
+
+      // GET REFERENCES
+      const idBox = document.getElementById("idField");
+      const nameBox = document.getElementById("nameField");
+      const ageBox = document.getElementById("ageField");
+
+      const submitBtn = document.getElementById("submitBt");
+      const getBtn = document.getElementById("getBt");
+
+      // Functions
+      function insertData() {
+        console.log("Running insert data function");
+        set(ref(db, "TheStudents/" + idBox.value), {
+          id: idBox.value,
+          name: nameBox.value,
+          age: ageBox.value,
+        })
+          .then(() => {
+            console.log("Data added successfully");
+          })
+          .catch((e) => {
+            console.log("Error: " + e.msg);
+          });
+      }
+
+      function getData() {
+        const dbRef = ref(db);
+
+        get(child(dbRef, "TheStudents/" + idBox.value))
+          .then((snapshot) => {
+            // if (snapshot.exist()) {
+            idBox.value = snapshot.val().id;
+            nameBox.value = snapshot.val().name;
+            ageBox.value = snapshot.val().age;
+            // } else {
+            //   console.log("No data of given id");
+            // }
+          })
+          .catch((e) => {
+            console.log("error :", e);
+          });
+      }
+
+      // ADD ONCLICK EVENTS
+
+      submitBtn.onclick = insertData;
+      getBtn.onclick = getData;
+    </script>
+
     <h1>User Database</h1>
-    <input type="text" placeholder="name" id="nameField" />
-    <input type="text" placeholder="name" id="ageField" />
-    <button type="submit" id="btn">submit</button>
+    <input type="text" placeholder="Id" id="idField" />
+    <input type="text" placeholder="Name" id="nameField" />
+    <input type="text" placeholder="Age" id="ageField" />
+    <hr />
+    <button id="submitBt">submit</button>
+    <button id="getBt">get</button>
   </body>
 </html>

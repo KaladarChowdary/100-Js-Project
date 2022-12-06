@@ -3,3 +3,32 @@
   margin: 0;
   padding: 0;
 }
+
+h1 {
+  margin: 50px;
+}
+
+#idField {
+  margin: 50px;
+  padding: 10px;
+}
+
+#nameField {
+  margin: 20px;
+  padding: 10px;
+}
+
+#ageField {
+  margin: 20px;
+  padding: 10px;
+}
+
+#submitBt {
+  margin: 40px;
+  padding: 20px;
+}
+
+#getBt {
+  margin: 20px;
+  padding: 20px;
+}
